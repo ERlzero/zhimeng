@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>织梦 · Dreamweaver — 输入文字，生成一片梦境</title>
+  <meta name="description" content="织梦：输入一段文字，生成一片只属于它的梦境。同样的文字，永远生成同样的梦。">
+  <meta name="theme-color" content="#080a18">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="dream" aria-hidden="true"></canvas>
+
+  <main class="ui">
+    <h1 class="title">织梦<span class="dot">·</span></h1>
+    <p class="subtitle">输入一段文字，生成一片只属于它的梦境</p>
+
+    <div class="input-row">
+      <input id="text-input" type="text" placeholder="例如：一场下在无边原野上的雨" autocomplete="off" spellcheck="false" maxlength="60">
+      <button id="generate" type="button">生成梦境</button>
+    </div>
+
+    <div class="actions">
+      <button id="save" type="button">保存截图</button>
+      <button id="share" type="button">复制分享链接</button>
+    </div>
+
+    <p class="hint" id="hint" aria-live="polite"></p>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

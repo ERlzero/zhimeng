@@ -1,0 +1,117 @@
+/* ============================================================
+   织梦 · Dreamweaver
+   输入文字，生成一片梦境
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #080a18;
+  --ink: #e9e6ff;
+  --muted: #9a94c8;
+  --accent: #b78bff;
+  --line: rgba(233, 230, 255, .14);
+}
+
+html, body { height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  overflow: hidden;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---------- UI ---------- */
+.ui {
+  position: fixed;
+  left: 50%;
+  bottom: 8vh;
+  transform: translateX(-50%);
+  width: min(92vw, 560px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  z-index: 10;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+}
+.title .dot { color: var(--accent); }
+
+.subtitle {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: .5rem;
+}
+
+.input-row {
+  display: flex;
+  gap: .6rem;
+  width: 100%;
+}
+
+#text-input {
+  flex: 1;
+  padding: .8rem 1rem;
+  background: rgba(20, 22, 44, .6);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  font-size: .95rem;
+  outline: none;
+  backdrop-filter: blur(8px);
+  transition: border-color .2s;
+}
+#text-input::placeholder { color: var(--muted); opacity: .7; }
+#text-input:focus { border-color: var(--accent); }
+
+button {
+  padding: .8rem 1.2rem;
+  background: var(--accent);
+  color: #16082e;
+  border: none;
+  border-radius: 10px;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, opacity .15s;
+}
+button:hover { transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.actions { display: flex; gap: .6rem; }
+.actions button {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-weight: 400;
+  backdrop-filter: blur(8px);
+}
+.actions button:hover { border-color: var(--accent); color: var(--accent); }
+
+.hint {
+  min-height: 1.2em;
+  font-size: .8rem;
+  color: var(--muted);
+  transition: opacity .3s;
+}
+
+@media (max-width: 520px) {
+  .input-row { flex-direction: column; }
+  .title { font-size: 2rem; }
+}
